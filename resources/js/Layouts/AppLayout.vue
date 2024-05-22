@@ -51,19 +51,43 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                            </div>
-                        </div>
-
+                                <!-- <NavLink href="/formations" :active="route().current('courses.index')">
+                                    Les formations
+                                </NavLink>   -->
+                                <!-- <NavLink href="/courses_create" :active="route().current('courses.create')">
+                                    Créer formations
+                                </NavLink>   -->
+                                <Dropdown>
+                                    <template #trigger>
+                                        <button class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition">
+                                            Formations
+                                            <svg class="ms-2 -me-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </button>
+                                    </template>
+                                    <template #content>
+                                        <DropdownLink :href="route('courses.index')" :active="route().current('courses.index')">
+                                            Liste formations
+                                        </DropdownLink>
+                                        <DropdownLink :href="route('courses.create')" :active="route().current('courses.create')">
+                                            Créer formations
+                                        </DropdownLink>
+                                    </template>
+                                </Dropdown>
+                            </div> 
+                        </div>  
+  
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
                             <div class="ms-3 relative">
-                                <!-- Teams Dropdown -->
+                                <!-- Teams Dropdown --> 
                                 <Dropdown v-if="$page.props.jetstream.hasTeamFeatures" align="right" width="60">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50 dark:active:bg-gray-700 transition ease-in-out duration-150">
                                                 {{ $page.props.auth.user.current_team.name }}
 
-                                                <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                 <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                                                 </svg>
                                             </button>
@@ -194,6 +218,30 @@ const logout = () => {
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </ResponsiveNavLink>
+                        <!-- <ResponsiveNavLink href="/courses" :active="route().current('courses.index')">
+                            Les formations
+                        </ResponsiveNavLink> -->
+                        <ResponsiveNavLink href="/courses_create" :active="route().current('courses.create')">
+                                Créer formations
+                        </ResponsiveNavLink>  
+                            <Dropdown>
+                                    <template #trigger>
+                                        <button class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition">
+                                            Formations
+                                            <svg class="ms-2 -me-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </button>
+                                    </template>
+                                    <template #content>
+                                        <DropdownLink :href="route('courses.index')" :active="route().current('courses.index')">
+                                            Liste formations
+                                        </DropdownLink>
+                                        <DropdownLink :href="route('courses.create')" :active="route().current('courses.create')">
+                                            Créer formations
+                                        </DropdownLink>
+                                    </template>
+                                </Dropdown>
                     </div>
 
                     <!-- Responsive Settings Options -->
